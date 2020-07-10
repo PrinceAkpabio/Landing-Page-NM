@@ -1,0 +1,329 @@
+*{
+ box-sizing: border-box;
+ margin: 0;
+ scroll-behavior: smooth;
+ overflow-x: hidden;
+}
+
+body{
+ background-color: plum;
+ font-family: Arial, Helvetica, sans-serif;
+ width: 100%;
+ height: 100%;
+
+}
+
+.main-container{
+ display: grid;
+ width: 100%;
+ height: 100%;
+}
+
+.nav nav{
+list-style: none;
+display: grid;
+ /* width: 100% */
+ height: auto;
+}
+
+.nav nav li{
+ display: flex;
+ justify-content: flex-end;
+}
+
+.nav nav li .mainBtn{
+ position: relative;
+ padding: 1rem;
+ margin-right: 2rem;
+ border-radius: 10px;
+ border: none;
+ outline: none;
+ background-color: crimson;
+ color: #fff;
+ overflow: hidden;
+ transition: 0.2s;
+}
+
+.nav nav li .mainBtn:hover{
+ background-color: chartreuse;
+ cursor: pointer;
+ box-shadow: 0 0 10px chartreuse, 0 0 40px chartreuse, 0 0 80px chartreuse;
+ transition-delay: 1s;
+}
+
+.nav nav li .mainBtn span{
+ position: absolute;
+ display: block;
+}
+
+.nav nav li .mainBtn span:nth-child(1){
+ top: 0;
+ left: -100%;
+ width: 100%;
+ height: 2px;
+ background: linear-gradient(90deg, transparent, chartreuse );
+}
+
+.nav nav li .mainBtn:hover span:nth-child(1){
+ left: 100%;
+ transition: 1s;
+}
+
+.nav nav li .mainBtn span:nth-child(3){
+ bottom: 0;
+ right: -100%;
+ width: 100%;
+ height: 2px;
+ background: linear-gradient(270deg, transparent, chartreuse );
+}
+
+.nav nav li .mainBtn:hover span:nth-child(3){
+ right: 100%;
+ transition: 1s;
+ transition-delay: 0.5s;
+}
+
+.nav nav li .mainBtn span:nth-child(2){
+ right: 0;
+ top: -100%;
+ width: 2px;
+ height: 100%;
+ background: linear-gradient(180deg, transparent, chartreuse );
+}
+
+.nav nav li .mainBtn:hover span:nth-child(2){
+ top: 100%;
+ transition: 1s;
+ transition-delay: 0.25s;
+}
+
+.nav nav li .mainBtn span:nth-child(4){
+ left: 0;
+ bottom: -100%;
+ width: 2px;
+ height: 100%;
+ background: linear-gradient(360deg, transparent, chartreuse );
+}
+
+.nav nav li .mainBtn:hover span:nth-child(4){
+ bottom: 100%;
+ transition: 1s;
+ transition-delay: 0.75s;
+}
+
+.modal{
+ display: none;
+ position: fixed;
+ background: rgba(215, 200, 245, 0.5);
+ width: 100%;
+ height: 100%;
+ z-index: 1;
+overflow: auto;
+transition: 0.5s;
+animation-name: modalTrans;
+}
+
+.modal #simpleModal{
+ display: grid;
+ background-color: #1A1832;
+ margin: 20% auto;
+ color: cornsilk;
+ width: 40%;
+ height: auto;
+ /* padding: 1rem; */
+ border-radius: 9px;
+}
+
+#simpleModal #modalHeader, #modalFooter{
+ padding: 1.3rem;
+ text-align: center;
+}
+
+#modalFooter{
+ color: darkgray;
+}
+
+#modalHeader span{
+ float: right;
+ font-size: 2rem;
+ color: darkgrey;
+}
+
+#modalHeader span:hover{
+ color: floralwhite;
+ cursor: pointer;
+}
+
+#modalHeader h2{
+ margin-top: 20px;
+}
+
+.modal-content form{
+display: flex;
+flex-direction: column;
+}
+.modal-content form input{
+margin: 0.5rem 0;
+}
+
+.modal-content form #formBtn{
+padding: 1rem;
+border-radius: 10px;
+border: none;
+outline: none;
+background: linear-gradient(10deg, transparent, crimson);
+color: floralwhite;
+}
+
+.modal-content form #formBtn:hover{
+cursor: pointer;
+background-color: chartreuse;
+}
+
+.body-content{
+ display: grid;
+ width: 100%;
+ height: 80vh;
+ color: floralwhite;
+}
+
+.body-content .body-image{
+ position: relative;
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ text-align: center;
+ top: 0;
+ left: 0;
+ width: 100%;
+ height: 100%;
+ background: url(../Assets/close-up-photo-ofg-light-bulb-716398.jpg) no-repeat center/cover;
+}
+
+.body-image h1, h2, h4, small{
+margin: 0.7rem 0;
+}
+.body-image h2{
+margin-top: 1.5rem;
+}
+
+.body-image small{
+ color: darkgrey;
+}
+
+
+.body-video{
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ position: absolute;
+ overflow: hidden;
+ bottom: 1900px;
+ left: 0;
+ width: 100%;
+ height: 100%;
+ z-index: 1;
+ opacity: 1;
+ /* display: none; */
+}
+
+
+.current{
+ transform: translateY(2270px);
+ transition: all 1s ease-in-out 0.5;
+}
+
+.body-video video{
+ width: 50rem;
+}
+
+.body-video video, .mainBtn, small{
+ margin: 1rem 0;
+}
+
+.body-video .mainBtn{
+ width: 50rem;
+ padding: 1rem;
+ border-radius: 5px;
+ position: relative;
+ border: none;
+ outline: none;
+ background-color: crimson;
+ color: #fff;
+ overflow: hidden;
+ transition: 0.2s;
+}
+
+
+.body-video .mainBtn:hover{
+ background-color: chartreuse;
+ cursor: pointer;
+ box-shadow: 0 0 10px chartreuse, 0 0 40px chartreuse, 0 0 80px chartreuse;
+ transition-delay: 1s;
+}
+
+.body-video .mainBtn span{
+ position: absolute;
+ display: block;
+}
+
+.body-video .mainBtn span:nth-child(1){
+ top: 0;
+ left: -100%;
+ width: 100%;
+ height: 2px;
+ background: linear-gradient(90deg, transparent, chartreuse );
+}
+
+.body-video .mainBtn:hover span:nth-child(1){
+ left: 100%;
+ transition: 1s;
+}
+
+.body-video .mainBtn span:nth-child(3){
+ bottom: 0;
+ right: -100%;
+ width: 100%;
+ height: 2px;
+ background: linear-gradient(270deg, transparent, chartreuse );
+}
+
+.body-video .mainBtn:hover span:nth-child(3){
+ right: 100%;
+ transition: 1s;
+ transition-delay: 0.5s;
+}
+
+.body-video .mainBtn span:nth-child(2){
+ right: 0;
+ top: -100%;
+ width: 2px;
+ height: 100%;
+ background: linear-gradient(180deg, transparent, chartreuse );
+}
+
+.body-video .mainBtn:hover span:nth-child(2){
+ top: 100%;
+ transition: 1s;
+ transition-delay: 0.25s;
+}
+
+.body-video .mainBtn span:nth-child(4){
+ left: 0;
+ bottom: -100%;
+ width: 2px;
+ height: 100%;
+ background: linear-gradient(360deg, transparent, chartreuse );
+}
+
+.body-video .mainBtn:hover span:nth-child(4){
+ bottom: 100%;
+ transition: 1s;
+ transition-delay: 0.75s;
+}
+
+
+@keyframes modalTrans{
+ from{opacity: 0;}
+ to{opacity: 1;}
+}
